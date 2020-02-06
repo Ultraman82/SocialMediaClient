@@ -3,7 +3,7 @@ import {
   SET_ERRORS,
   CLEAR_ERRORS,
   LOADING_UI,
-  SET_AUTHETICATED,
+  SET_AUTHENTICATED,
   SET_UNAUTHENTICATED
 } from "../types";
 const initialState = {
@@ -15,7 +15,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case SET_AUTHETICATED:
+    case SET_AUTHENTICATED:
       return {
         ...state,
         authenticated: true

@@ -13,8 +13,9 @@ import Typography from "@material-ui/core/Typography";
 
 const styles = {
   card: {
+    position: "relative",
     display: "flex",
-    marginBottm: 20
+    marginBottom: 20
   },
   image: {
     minWidth: 200

@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
+import EditDetails from "./EditDetails";
+import MyButton from "../util/MyButton";
 // MUI stuff
 import {
   Tooltip,
@@ -16,7 +18,7 @@ import MuiLink from "@material-ui/core/Link";
 //import Paper from "@material-ui/core/Paper";
 //import IconButton from "@material-ui/core/IconButton";
 //import Tooltip from "@material-ui/core/Tooltip";
-import EditDetails from "./EditDetails";
+
 // Icons
 import LocationOn from "@material-ui/icons/LocationOn";
 import LinkIcon from "@material-ui/icons/Link";
@@ -124,11 +126,18 @@ class Profile extends Component {
                 hidden="hidden"
                 onChange={this.handleImageChage}
               />
-              <Tooltip title="Edit profile picture" placement="top">
+              {/* <Tooltip title="Edit profile picture" placement="top">
                 <IconButton onClick={this.handleEditPicture} className="button">
                   <EditIcon color="primary"> </EditIcon>
                 </IconButton>
-              </Tooltip>
+              </Tooltip> */}
+              <MyButton
+                tip="Edit Profile Picture"
+                onClick={this.handleEditPicture}
+                btnClassName="button"
+              >
+                <EditIcon color="primary" />
+              </MyButton>
             </div>
             <hr />
             <div className="profile-details">
@@ -164,11 +173,9 @@ class Profile extends Component {
               {""}
               <span>Joined {dayjs(createdAt).format("MMM YYYY")}</span>
             </div>
-            <Tooltip title="Logout" placement="top">
-              <IconButton onClick={this.handleLogout}>
-                <KeyboardReturn color="primary" />
-              </IconButton>
-            </Tooltip>
+            <MyButton tip="Logout" onClick={this.handleLogout}>
+              <KeyboardReturn color="primary" />
+            </MyButton>
             <EditDetails />
           </div>
         </Paper>

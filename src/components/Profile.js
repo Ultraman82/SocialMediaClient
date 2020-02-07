@@ -16,12 +16,13 @@ import MuiLink from "@material-ui/core/Link";
 //import Paper from "@material-ui/core/Paper";
 //import IconButton from "@material-ui/core/IconButton";
 //import Tooltip from "@material-ui/core/Tooltip";
-
+import EditDetails from "./EditDetails";
 // Icons
 import LocationOn from "@material-ui/icons/LocationOn";
 import LinkIcon from "@material-ui/icons/Link";
 import CalendarToday from "@material-ui/icons/CalendarToday";
 import EditIcon from "@material-ui/icons/Edit";
+import KeyboardReturn from "@material-ui/icons/KeyboardReturn";
 
 //Redux
 import { connect } from "react-redux";
@@ -98,6 +99,9 @@ class Profile extends Component {
     const fileInput = document.getElementById("imageInput");
     fileInput.click();
   };
+  handleLogout = () => {
+    this.props.logoutUser();
+  };
   render() {
     //console.log(JSON.stringify(this.props));
     const {
@@ -156,11 +160,16 @@ class Profile extends Component {
                   </a>
                 </Fragment>
               )}
-              <CalendarToday color="primary">
-                {""}
-                <span>Joined {dayjs(createdAt).format("MMM YYYY")}</span>
-              </CalendarToday>
+              <CalendarToday color="primary" />
+              {""}
+              <span>Joined {dayjs(createdAt).format("MMM YYYY")}</span>
             </div>
+            <Tooltip title="Logout" placement="top">
+              <IconButton onClick={this.handleLogout}>
+                <KeyboardReturn color="primary" />
+              </IconButton>
+            </Tooltip>
+            <EditDetails />
           </div>
         </Paper>
       ) : (

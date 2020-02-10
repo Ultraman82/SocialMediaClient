@@ -6,13 +6,7 @@ import dayjs from "dayjs";
 import EditDetails from "./EditDetails";
 import MyButton from "../util/MyButton";
 // MUI stuff
-import {
-  Tooltip,
-  Typography,
-  Button,
-  Paper,
-  IconButton
-} from "@material-ui/core";
+import { Typography, Button, Paper } from "@material-ui/core";
 //import Button from "@material-ui/core/Button";
 import MuiLink from "@material-ui/core/Link";
 //import Paper from "@material-ui/core/Paper";

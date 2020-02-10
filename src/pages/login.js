@@ -61,7 +61,7 @@ class login extends Component {
       <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm>
-          <img src={AppIcon} alt="image" className={classes.image}></img>
+          <img src={AppIcon} alt="icon" className={classes.image}></img>
           <Typography variant="h2" className={classes.pageTitle}>
             Login
           </Typography>

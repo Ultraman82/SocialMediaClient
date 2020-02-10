@@ -6,7 +6,7 @@ import MyButton from "../util/MyButton";
 // MUI stuff
 import { Button, DialogActions, Dialog, DialogTitle } from "@material-ui/core";
 
-import Typography from "@material-ui/core/Typography";
+//import Typography from "@material-ui/core/Typography";
 //Icons
 import DeleteOutline from "@material-ui/icons/DeleteOutline";
 
@@ -32,6 +32,7 @@ class DeleteScream extends Component {
     this.setState({ open: false });
   };
   deleteScream = () => {
+    console.log();
     this.props.deleteScream(this.props.screamId);
     this.setState({ open: false });
   };
@@ -56,10 +57,10 @@ class DeleteScream extends Component {
             Are you sure you want to delete this scream?
           </DialogTitle>
           <DialogActions>
-            <Button onclick={this.handleClose} color="primary">
-              Candel
+            <Button onClick={this.handleClose} color="primary">
+              Cancel
             </Button>
-            <Button onclick={this.deleteScream} color="secondary">
+            <Button onClick={this.deleteScream} color="secondary">
               Delete
             </Button>
           </DialogActions>

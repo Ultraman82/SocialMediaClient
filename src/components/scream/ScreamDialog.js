@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
-import MyButton from "../util/MyButton";
+import MyButton from "../../util/MyButton";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
-
+import LikeButton from "./LikeButton";
 //Mui
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -19,11 +19,12 @@ import Typography from "@material-ui/core/Typography";
 //Icons
 
 import CloseIcon from "@material-ui/icons/Close";
+import ChatIcon from "@material-ui/icons/Chat";
 import UnfoldMore from "@material-ui/icons/UnfoldMore";
 
 //Redux
 import { connect } from "react-redux";
-import { getScream } from "../redux/actions/dataActions";
+import { getScream } from "../../redux/actions/dataActions";
 
 const styles = theme => ({
   ...theme.sepration,
@@ -90,7 +91,7 @@ class ScreamDialog extends Component {
         <CircularProgress size={200} thickness={2}></CircularProgress>
       </div>
     ) : (
-      <Grid container spacing={16}>
+      <Grid container spacing={10}>
         <Grid item sm={5}>
           <img src={userImage} alt="Profile" className={classes.profileImage} />
         </Grid>
@@ -109,6 +110,12 @@ class ScreamDialog extends Component {
           </Typography>
           <hr className={classes.invisibleSeprator} />
           <Typography variant="body1">{body}</Typography>
+          <LikeButton screamId={screamId}></LikeButton>
+          <span>{likeCount} likes</span>
+          <MyButton tip="comments">
+            <ChatIcon color="primary"></ChatIcon>
+          </MyButton>
+          <span>{commentCount} Comments</span>
         </Grid>
       </Grid>
     );
